@@ -21,3 +21,11 @@ jobs:
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+    # This step checks the quality gate status after the scan is complete
+    #   - name: SonarQube Quality Gate Check
+    #     uses: sonarsource/sonarqube-quality-gate-action@master
+    #     timeout-minutes: 10
+    #     env:
+    #       SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+    #       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
