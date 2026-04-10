@@ -1,9 +1,9 @@
 name: "Build and push Super Mario Docker image with static tag to Docker Hub"
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
 jobs:
 
@@ -40,6 +40,7 @@ jobs:
           image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/supermario:${{ github.sha }}
           format: 'sarif'
           output: 'trivy-results.sarif'
+          severity: 'HIGH,CRITICAL'
 
     #   - name: Upload Trivy Results to GitHub Security
     #     uses: github/codeql-action/upload-sarif@v2
